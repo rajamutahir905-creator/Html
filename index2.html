@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forney Roofers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            display: flex;
+            position: sticky;
+        }
+
+        .logo h1 {
+            color: white;
+            background-color: black;
+            display: inline-block;
+            margin: 7px 12px;
+            border: 2px solid black;
+        }
+
+        @media (min-width: 500px) and (max-width: 1000px) {
+            .logo h1 {}
+        }
+
+        @media (min-width: 300px) and (max-width: 500px) {
+            .logo h1 {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 300px) {
+            .logo h1 {
+                font-size: 24px;
+            }
+        }
+
+        .logo span {
+            background-color: yellow;
+            color: black;
+            border: 2px solid yellow;
+            /* margin: 7px 12px; */
+        }
+
+        .navbar ul {
+            display: flex;
+            align-items: center;
+            margin: auto;
+            /* width: 12%; */
+        }
+
+        @media (min-width: 500px) and (max-width: 1000px) {
+            .navbar ul {
+                flex-direction: column;
+            }
+        }
+
+        @media (min-width: 300px) and (max-width: 500px) {
+            .navbar ul {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 300px) {
+            .navbar ul {
+                flex-direction: column;
+            }
+        }
+
+        .navbar ul li {
+            list-style: none;
+            margin: 14px 19px;
+            border-radius: 9px;
+        }
+
+        .navbar ul li:hover {
+            background-color: #1b1919;
+            color: white;
+        }
+
+        @media (min-width: 500px) and (max-width: 1000px) {
+            .navbar ul li {
+                margin: 6px 3px;
+
+            }
+        }
+
+        @media (min-width: 300px) and (max-width: 500px) {
+            .navbar ul li {
+                margin: 6px 3px;
+
+            }
+        }
+
+        @media (max-width: 300px) {
+            .navbar ul li {
+                margin: 6px 3px;
+
+            }
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            padding: 8px 15px;
+            font-size: 20px;
+            color: rgb(255, 249, 249);
+        }
+
+        .num {
+            margin: 5px 18px;
+            padding: 3px 9px;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (min-width: 500px) and (max-width: 1000px) {
+            .num {
+                display: none;
+            }
+        }
+
+        @media (min-width: 300px) and (max-width: 500px) {
+            .num {
+                display: none;
+            }
+        }
+
+        @media (max-width: 300px) {
+            .num {
+                display: none;
+            }
+        }
+
+
+        .num:hover {
+            text-decoration: underline;
+        }
+
+        .num img {
+            width: 29px;
+            margin: -10px 1px
+        }
+
+        .home {
+            display: flex;
+            flex-direction: column;
+            margin: 2px 5px;
+        }
+
+        .home::before {
+            content: "";
+            position: absolute;
+            background: url("https://cdn.pixabay.com/photo/2016/05/21/21/39/housebuilding-1407499_640.jpg") no-repeat center center /cover;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 575px;
+            z-index: -1;
+            opacity: 0.89;
+        }
+
+        @media (min-width: 500px) and (max-width: 1000px) {
+            .home::before {
+                height: 763px;
+            }
+        }
+
+        @media (min-width: 300px) and (max-width: 500px) {
+            .home::before {
+                height: 971px;
+            }
+        }
+
+        @media (max-width: 300px) {
+            .home::before {
+                height: 971px;
+            }
+        }
+
+        h6 {
+            background-color: yellow;
+            display: inline;
+            font-size: 15px;
+            padding: 3px 4px;
+        }
+
+        .son {
+            margin: 74px 16px;
+            width: 43%;
+        }
+
+        @media (min-width: 500px) and (max-width: 1000px) {
+            .son {
+                width: 90%;
+            }
+        }
+
+        @media (min-width: 300px) and (max-width: 500px) {
+            .son {
+                width: 90%;
+            }
+        }
+
+        @media (max-width: 300px) {
+            .son {
+                width: 90%;
+            }
+        }
+
+        .son h2 {
+            margin-top: 1px;
+            font-size: 50px;
+            color: white;
+        }
+
+        .son span {
+            color: yellow;
+        }
+
+        .son p {
+            color: white;
+            margin: 8px 5px;
+        }
+
+        /* .btn{
+            display: flex;
+        } */
+        .num1 {
+            margin: 9px 1px;
+            padding: 8px 9px;
+            background-color: rgb(255, 251, 21);
+            /* color: ; */
+            cursor: pointer;
+        }
+
+        .num1:hover {
+            text-decoration: underline;
+        }
+
+        .num1 img {
+            width: 29px;
+            margin: -10px 1px
+        }
+
+        .num2 {
+            margin: 9px 1px;
+            padding: 8px 9px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            cursor: pointer;
+        }
+
+        .num2:hover {
+            text-decoration: underline;
+        }
+
+        .num2 img {
+            width: 29px;
+            margin: -10px 1px
+        }
+
+        .nom {
+            display: flex;
+            margin: 2px 1px;
+        }
+
+        .nom img {
+            width: 20px;
+            margin: -4px 5px;
+        }
+
+        .nom p {
+            padding: 2px 5px;
+        }
+
+
+
+        /* section 2 */
+
+        .aside {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: whitesmoke;
+        }
+
+        @media (min-width: 500px) and (max-width: 1000px) {
+            .box {
+                flex-direction: column;
+            }
+        }
+
+        @media (min-width: 300px) and (max-width: 500px) {
+            .box {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 300px) {
+            .box {
+                flex-direction: column;
+            }
+        }
+
+
+        .aside h4 {
+            background-color: yellow;
+            padding: 4px 5px;
+            margin-top: 16px;
+        }
+
+        .aside p {
+            padding-bottom: 24px;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .bun {
+            background-color: white;
+            border: 2px solid rgb(146, 139, 139);
+            margin: 2px 2px;
+            padding: 2px 2px;
+            height: 279px;
+            width: 22%;
+            border-radius: 12px;
+        }
+
+        @media (min-width: 500px) and (max-width: 1000px) {
+            .bun {
+                width: 77%;
+            }
+        }
+
+        @media (min-width: 300px) and (max-width: 500px) {
+            .bun {
+                width: 82%;
+            }
+        }
+
+        @media (max-width: 300px) {
+            .bun {
+                width: 82%;
+            }
+        }
+
+        .bun p {
+            padding: 10px 4px;
+            padding-bottom: 14px;
+        }
+
+        .bun h2 {
+            padding: 1px 3px;
+        }
+
+        .bun img {
+            width: 29px;
+        }
+
+        .bun button {
+            border: none;
+            background: none;
+            margin: 5px 7px;
+            cursor: pointer;
+            /* border: none; */
+        }
+
+        .btn2 {
+            margin: 14px 3px;
+            padding: 12px 7px;
+            background-color: yellow;
+            cursor: pointer;
+            border: none;
+        }
+
+
+
+        /* section 3 */
+
+        .atem {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 90px 200px;
+        }
+
+        @media (min-width: 500px) and (max-width: 1000px) {
+            .atem {
+                flex-direction: column;
+                width: 42%;
+                padding: 90px 112px;
+                align-items: baseline;
+            }
+        }
+
+        @media (min-width: 300px) and (max-width: 500px) {
+            .atem {
+                flex-direction: column;
+                width: 42%;
+                padding: 90px 112px;
+            }
+        }
+
+        @media (max-width: 300px) {
+            .atem {
+                flex-direction: column;
+                width: 42%;
+                padding: 90px 112px;
+            }
+        }
+
+        .btn3 {
+            width: 25%;
+            margin: 21px 2px;
+            padding: 11px 2px;
+            background-color: yellow;
+            border: none;
+            cursor: pointer;
+        }
+
+        .doxy {
+            margin: 35px 2px;
+        }
+
+        @media (min-width: 500px) and (max-width: 1000px) {
+            .doxyn {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .doxy h5 {
+                width: 35%;
+            }
+
+            .btn3 {
+                width: 69%;
+            }
+        }
+
+        @media (min-width: 300px) and (max-width: 500px) {
+            .doxyn {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .doxy h5 {
+                width: 35%;
+            }
+
+            .btn3 {
+                width: 69%;
+            }
+        }
+
+        @media (max-width: 300px) {
+            .doxyn {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .doxy h5 {
+                width: 35%;
+            }
+
+            .btn3 {
+                width: 69%;
+            }
+        }
+
+        .doxy h5 {
+            background-color: yellow;
+            width: 16%;
+            padding: 3px 5px;
+        }
+
+        @media (min-width: 500px) and (max-width: 1000px) {
+            .doxy h5 {
+                width: 35%;
+            }
+
+            .doxy h1 {
+                width: 35%;
+            }
+        }
+
+        @media (min-width: 300px) and (max-width: 500px) {
+            .doxy h5 {
+                width: 35%;
+            }
+
+            .doxy h1 {
+                width: 35%;
+            }
+        }
+
+        @media (max-width: 300px) {
+            .doxy h5 {
+                width: 35%;
+            }
+
+            .doxy h1 {
+                width: 35%;
+            }
+        }
+
+        .doxy p {
+            margin: 9px 2px;
+        }
+
+        .doxy h1 {}
+
+        @media (min-width: 500px) and (max-width: 1000px) {
+            .doxy h1 {
+                width: 108%;
+            }
+        }
+
+        @media (min-width: 300px) and (max-width: 500px) {
+            .doxy h1 {
+                width: 108%;
+            }
+        }
+
+        @media (max-width: 300px) {
+            .doxy h1 {
+                width: 108%;
+            }
+        }
+
+        .kkk img {
+            width: 322px;
+        }
+
+        .kkk h3 {
+            text-align: center;
+            margin: 9px 94px;
+            background-color: black;
+            color: white;
+            display: flex;
+            /* padding: 3px 8px; */
+        }
+
+        .kkk span {
+            background-color: yellow;
+            color: black;
+            padding: 1px 8px;
+
+        }
+
+        .kkk p {
+            /* margin: 23px 3px; */
+            text-align: center;
+        }
+
+
+
+        /* section 4 */
+
+
+        .containar {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: whitesmoke;
+        }
+
+        .containar h4 {
+            background-color: yellow;
+            padding: 4px 7px;
+            margin-top: 33px;
+        }
+
+        .boder {
+            border: 2px solid white;
+            /* border: 2px solid white; */
+            margin: 32px 6px;
+            padding: 43px 45px;
+            width: 63%;
+            background-color: white;
+            border-radius: 34px;
+        }
+
+        .con img {
+            width: 45px;
+            margin: 17px 5px;
+        }
+
+        .con {
+            display: flex;
+        }
+
+        .con h5 {
+            margin: 19px 9px;
+            font-size: 18px;
+        }
+
+        .con span {
+            font-weight: 100;
+            font-size: 14px;
+        }
+
+        .img img {
+            width: 24px;
+        }
+
+        .boder p {
+            margin: 12px 2px;
+        }
+
+        .containar button {
+            margin-bottom: 49px;
+            padding: 9px 12px;
+            background-color: yellow;
+            border: none;
+            cursor: pointer;
+        }
+
+
+
+
+        /* section 5 */
+
+        .doxyline {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 43px 200px;
+            border: 2px solid black;
+            margin: 58px 58px;
+            background-color: black;
+            color: white;
+            border-radius: 18px;
+            text-align: center;
+        }
+
+        @media (min-width: 500px) and (max-width: 1000px) {
+            .doxyline {
+                margin: 30px 11px;
+                padding: 43px 87px;
+                width: 64%;
+            }
+        }
+
+        @media (min-width: 300px) and (max-width: 500px) {
+            .doxyline {
+                margin: 30px 11px;
+                padding: 43px 57px;
+                width: 64%;
+            }
+        }
+
+        @media (max-width: 300px) {
+            .doxyline {
+                margin: 30px 11px;
+                padding: 43px 57px;
+                width: 64%;
+            }
+        }
+
+        .doxyline h1 {
+            margin-bottom: 12px;
+        }
+
+        .term {
+            display: flex;
+            margin: 14px 2px;
+        }
+
+        .term button {
+            padding: 2px 22px;
+            background-color: black;
+            color: white;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+
+        .term h3 {
+            background-color: yellow;
+            color: black;
+            padding: 7px 7px;
+            border-radius: 5px;
+        }
+
+
+        /* section 5 */
+        .end {
+            background-color: #1b1919;
+            color: white;
+        }
+
+        .end1 {
+            display: flex;
+            /* justify-content: center;
+            align-items: center; */
+            margin: 3px 58px;
+        }
+
+        @media (min-width: 500px) and (max-width: 1000px) {
+            .end1 {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (min-width: 300px) and (max-width: 500px) {
+            .end1 {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 300px) {
+            .end1 {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .end3 {
+            /* padding: 21px 70px; */
+            width: 25%;
+        }
+
+        @media (min-width: 500px) and (max-width: 1000px) {
+            .end3 {
+                padding: 18px 56px;
+
+            }
+        }
+
+        @media (max-width: 300px) {
+            .end3 {
+                padding: 18px 56px;
+
+            }
+        }
+
+        .end3 h3 {
+            margin: 10px 0px;
+        }
+
+        .end1 img {
+            width: 29px;
+            margin: 14px 6px;
+        }
+
+        .end1 span {
+            color: yellow;
+        }
+
+        .end p {
+            font-size: 13px;
+            padding: 5px 5px;
+        }
+
+        .img-icon {}
+
+        @media (min-width: 500px) and (max-width: 1000px) {
+            .img-con {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <h1>Forney<span>Roofers</span></h1>
+        </div>
+        <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Iptations</a></li>
+            <li><a href="#">Servicess</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Contect</a></li>
+        </ul>
+        <button type="button" class="num"><img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTulAv5JC21xCOERi5X9KF7KRrSxovA5J5bGQ&s"
+                alt="">{469} 864-7623</button>
+    </nav>
+    <section class="home">
+        <div class="son">
+            <h6>#1 Roofing Company in Formey, TX</h6>
+            <h2>Forney Roofers:</h2>
+            <h2>Expert Roofing <span>Solutions</span></h2>
+            <h2>For Your home</h2>
+            <p>Trusted Forney inomeowners for quality roof repairs, repla ements, and <br> installation, Local,
+                lictensed, and insured roofers near</p>
+            <div class="btn">
+                <button type="button" class="num1"><img
+                        src="https://cdn.pixabay.com/photo/2016/06/06/16/39/phone-1439844_1280.png" alt="">{469}
+                    864-7623</button>
+                <button type="button" class="num2">Get a Free Estimate</button>
+            </div>
+            <div class="nom">
+                <p><img src="https://cdn.pixabay.com/photo/2015/06/09/16/12/icon-803718_640.png" alt="">Get a Free
+                    Estimate</p>
+                <p><img src="https://cdn.pixabay.com/photo/2015/06/09/16/12/icon-803718_640.png" alt="">Get a Free
+                    Estimate</p>
+                <p><img src="https://cdn.pixabay.com/photo/2015/06/09/16/12/icon-803718_640.png" alt="">Get a Free
+                    Estimate</p>
+
+            </div>
+        </div>
+    </section>
+    <section class="aside">
+        <h4>COR SERVICES</h4>
+        <h1>Expert Roofing Solutions</h1>
+        <p>We offer comcrehersive roding Services to meet all your needs.</p>
+
+        <div class="box">
+            <div class="bun">
+                <!-- <img src="https://cdn.pixabay.com/photo/2016/11/28/06/09/map-1864379_640.png" alt="" srcset=""> -->
+                <img src="https://cdn.pixabay.com/photo/2017/06/13/13/57/floppy-2398963_640.png" alt="" srcset="">
+                <h2>Commerical Roofing</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse accusamus aut dolorem qui quae
+                    voluptates consequuntur temporibus aspernatur vel expedita, voluptatem, saepe dignissimos ipsam ab
+                    quibusdam iure, quos Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <button type="button">Learn More --></button>
+            </div>
+            <div class="bun">
+                <!-- <img src="https://cdn.pixabay.com/photo/2013/07/12/18/35/world-153534_640.png" alt="" srcset=""> -->
+                <img src="https://cdn.pixabay.com/photo/2013/07/12/15/28/hypothecary-credit-149895_640.png" alt="" srcset="">
+                <h2>Metal Roofing</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse accusamus aut dolorem qui quae
+                    voluptates consequuntur temporibus aspernatur vel expedita, voluptatem, saepe dignissimos ipsam ab
+                    quibusdam iure, quos Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <button type="button">Learn More --></button>
+            </div>
+            <div class="bun">
+                <img src="https://cdn.pixabay.com/photo/2013/07/13/11/32/arrow-158359_640.png" alt="" srcset="">
+                <h2>Roof Repairs</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse accusamus aut dolorem qui quae
+                    voluptates consequuntur temporibus aspernatur vel expedita, voluptatem, saepe dignissimos ipsam ab
+                    quibusdam iure, quos Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <button type="button">Learn More --></button>
+            </div>
+            <div class="bun">
+                <img src="https://cdn.pixabay.com/photo/2016/03/18/15/08/slightly-cloudy-1265210_640.png" alt="" srcset="">
+                <h2>Storm Damage</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse accusamus aut dolorem qui quae
+                    voluptates consequuntur temporibus aspernatur vel expedita, voluptatem, saepe dignissimos ipsam ab
+                    quibusdam iure, quos Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <button type="button">Learn More --></button>
+            </div>
+        </div>
+        <button type="button" class="btn2">View All Services--></button>
+    </section>
+    <section class="atem">
+        <div class="doxy">
+
+            <h5>ABOUT US</h5>
+            <h1>Your Trusted Local Roofing Experts <br> With decades of Experience</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, vitae in totam adipisci cum <br>
+                dignissimos
+                enim similique. Necessitatibus est laboriosam ipsa neque, quod adipisci quo libero, odit ratione error
+                aliquam.</p>
+            <button type="button" class="btn3">Learn More About Us--></button>
+        </div>
+        <div class="kkk">
+            <img src="https://cdn.pixabay.com/photo/2016/02/25/15/43/home-1222352_960_720.jpg" alt="" srcset="">
+            <h3>Formecy <span>Acefers</span></h3>
+            <p>One starm can wreck your roof-we make <br> sure it doesn't wreck your home</p>
+        </div>
+    </section>
+    <section class="containar">
+        <h4>TESTIMONALS</h4>
+        <h1>What Our Customers Say</h1>
+        <p>Don't just take car world for it. Her from our satisfied Customers</p>
+        <div class="boder">
+            <div class="img">
+                <img src="https://cdn.pixabay.com/photo/2024/05/29/18/23/star-8796880_640.png" alt="" srcset="">
+                <img src="https://cdn.pixabay.com/photo/2024/05/29/18/23/star-8796880_640.png" alt="" srcset="">
+                <img src="https://cdn.pixabay.com/photo/2024/05/29/18/23/star-8796880_640.png" alt="" srcset="">
+                <img src="https://cdn.pixabay.com/photo/2024/05/29/18/23/star-8796880_640.png" alt="" srcset="">
+                <img src="https://cdn.pixabay.com/photo/2024/05/29/18/23/star-8796880_640.png" alt="" srcset="">
+
+            </div>
+            <p>*Forney Roofers replaced our enter roof after a severe hailstorm. They handled the insurance claims
+                process <br>seamlesly and completed the job in just two days Exceptional servcel*</p>
+            <div class="con">
+                <img src="https://cdn.pixabay.com/photo/2023/05/02/10/35/avatar-7964945_640.png" alt="" srcset="">
+                <h5>Michael Johnson <br> <span>Hmoonter in jomey</span></h5>
+            </div>
+        </div>
+        <button type="button">Cities We Operate --></button>
+    </section>
+    <section class="doxyn">
+        <div class="doxyline">
+            <h1>Ready to Get Started?</h1>
+            <p>Contact us today for a free roof inspection and estimate. Our team is ready to provide you with <br>
+                exceptional roofing services.</p>
+            <div class="term">
+                <h3>Contact Us Today</h3>
+                <button type="button">Call {469} 864-7623</button>
+            </div>
+        </div>
+    </section>
+    <section class="end">
+        <div class="end1">
+            <div class="end3">
+                <h3>Forne <span>Roofers</span></h3>
+                <p>Expert rooling services for resdertial and <br>commerical properties in Forney. TX and <br>sunounding
+                    areas</p>
+                <div class="img-con">
+
+                    <img src="https://cdn.pixabay.com/photo/2016/11/09/10/42/facebook-1811267_640.jpg" alt="" srcset="">
+                    <img src="https://cdn.pixabay.com/photo/2016/06/16/04/21/twitter-1460609_640.png" alt="" srcset="">
+                    <img src="https://cdn.pixabay.com/photo/2022/06/21/15/12/instagram-7276025_640.png" alt=""
+                        srcset="">
+                    <img src="https://cdn.pixabay.com/photo/2016/06/16/04/20/in-1460602_640.png" alt="" srcset="">
+                </div>
+
+            </div>
+            <div class="end3">
+                <h3>Our Services</h3>
+                <p>Rescential Hoofin</p>
+                <p>Commerical Roofing</p>
+                <p>Roof Repaires</p>
+                <p>Starm Camugo</p>
+                <p>Emergency Services</p>
+                <p>Roof Replocomax</p>
+
+            </div>
+            <div class="end3">
+                <h3>Quick Links</h3>
+                <p>About Us</p>
+                <p>Our Team</p>
+                <p>Services</p>
+                <p>Location</p>
+
+            </div>
+            <div class="end3">
+                <h3>Contact Us</h3>
+                <p>{469} 864-7623</p>
+                <p>inforforneynoofers.com</p>
+                <p>Monday-Friday:fam-6pm</p>
+                <p>Saturday 8am-2pm</p>
+                <p>Sunday Closed</p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

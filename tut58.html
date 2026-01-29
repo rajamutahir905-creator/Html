@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+// 1
+    
+        for (  let i = 1;  i <= 10; i++) {
+    console.log(i);
+}
+
+let num = prompt("Enter a number:");
+num = Number(num);
+
+for (let i = 1; i <= 10; i++) {
+    console.log(num + " x " + i + " = " + (num * i));
+}
+
+// 2
+
+
+let num = prompt("Enter a number:");
+num = Number(num);
+
+let isPrime = true;
+
+if (num <= 1) {
+    isPrime = false;
+} else {
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            isPrime = false;
+            break;
+        }
+    }
+}
+
+3
+
+if (isPrime) {
+    console.log(num + " is a Prime Number");
+} else {
+    console.log(num + " is NOT a Prime Number");
+}
+
+
+// 4
+
+function square(num) {
+    return num * num;
+}
+
+let result = square(5);
+console.log(result);
+
+
+// 5
+
+function calculate(a, b) {
+    return {
+        sum: a + b,
+        difference: a - b,
+        product: a * b,
+        division: a / b
+    };
+}
+
+
+// 6
+
+let result = calculate(10, 5);
+console.log(result);
+
+
+function totalAndAverage() {
+    let total = 0;
+
+    for (let i = 1; i <= 5; i++) {
+        let num = Number(prompt("Enter number " + i + ":"));
+        total += num;
+    }
+
+    let average = total / 5;
+
+    console.log("Total = " + total);
+    console.log("Average = " + average);
+}
+
+totalAndAverage();
+
+
+// 6
+
+function assignGrade(marks) {
+    if (marks >= 80) {
+        return "Grade A";
+    } else if (marks >= 60) {
+        return "Grade B";
+    } else if (marks >= 40) {
+        return "Grade C";
+    } else {
+        return "Fail";
+    }
+}
+
+let marks = Number(prompt("Enter student marks:"));
+let grade = assignGrade(marks);
+
+console.log("Result:", grade);
+        
+
+    </script>
+    
+</body>
+</html>
